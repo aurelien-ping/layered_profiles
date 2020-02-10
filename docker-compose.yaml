@@ -6,11 +6,11 @@ services:
     image: pingidentity/pingdirectory:edge
     environment:
       - PING_IDENTITY_ACCEPT_EULA=YES
-      - SERVER_PROFILE_URL=https://github.com/gmorgan-ping/layered_profiles.git
+      - SERVER_PROFILE_URL=https://github.com/aurelien-ping/layered_profiles.git
       - SERVER_PROFILE_PATH=getting-started/pingdirectory
       - SERVER_PROFILE_PARENT=LICENSE
 
-      - SERVER_PROFILE_LICENSE_URL=https://github.com/gmorgan-ping/layered_profiles.git
+      - SERVER_PROFILE_LICENSE_URL=https://github.com/aurelien-ping/layered_profiles.git
       - SERVER_PROFILE_LICENSE_PATH=license/pingdirectory
     ports:
       - 1636-1646:636
@@ -23,11 +23,11 @@ services:
     command: wait-for pingdirectory:389 -t 300 -- entrypoint.sh start-server
     environment:
       - PING_IDENTITY_ACCEPT_EULA=YES
-      - SERVER_PROFILE_URL=https://github.com/gmorgan-ping/layered_profiles.git
+      - SERVER_PROFILE_URL=https://github.com/aurelien-ping/layered_profiles.git
       - SERVER_PROFILE_PATH=getting-started/pingfederate
       - SERVER_PROFILE_PARENT=LICENSE
 
-      - SERVER_PROFILE_LICENSE_URL=https://github.com/gmorgan-ping/layered_profiles.git
+      - SERVER_PROFILE_LICENSE_URL=https://github.com/aurelien-ping/layered_profiles.git
       - SERVER_PROFILE_LICENSE_PATH=license/pingfederate
     ports:
       - 9031:9031

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urn:AuthnSelectionConfig lastModifiedMillis="1585746135841" enableAuthnSelection="true" enableSpAuthnSelection="false" failIfNoSelection="false" xmlns:urn="urn:pingidentity.com:pf:authn-selection">
+    <urn:AuthnSelectionTrees>
+        <urn:AuthnSelectionTree treeName="test policy" disabled="false" authnApiApp="">
+            <urn:AstRoot context="">
+                <urn:AstAction authnSelectorId="selcsas" xsi:type="urn:AuthnSelectorActionType" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                <urn:AstChild context="No">
+                    <urn:AstAction xsi:type="urn:AuthnSourceActionType" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                        <urn:AuthnSourceKey type="ADAPTER">adphtmlform</urn:AuthnSourceKey>
+                        <urn:fallbackToSuccess>true</urn:fallbackToSuccess>
+                    </urn:AstAction>
+                    <urn:AstChild context="Fail">
+                        <urn:AstAction noOpType="DONE" xsi:type="urn:NoOpActionType" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                    </urn:AstChild>
+                    <urn:AstChild context="Success">
+                        <urn:AstAction apcId="AYC2EL9nt0kY2ILs" xsi:type="urn:ApcMappingActionType" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                            <urn:AttributeMapping>
+                                <urn1:AttributeMap Name="subject" Type="Adapter" AttributeSourceId="adphtmlform" Value="username" xmlns:urn1="urn:sourceid.org:saml2:metadata-extension:v2"/>
+                                <urn1:TokenAuthorizationIssuanceCriteria xmlns:urn1="urn:sourceid.org:saml2:metadata-extension:v2"/>
+                            </urn:AttributeMapping>
+                        </urn:AstAction>
+                    </urn:AstChild>
+                </urn:AstChild>
+                <urn:AstChild context="Yes">
+                    <urn:AstAction xsi:type="urn:AuthnSourceActionType" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                        <urn:AuthnSourceKey type="ADAPTER">adphtmlform2</urn:AuthnSourceKey>
+                        <urn:fallbackToSuccess>true</urn:fallbackToSuccess>
+                    </urn:AstAction>
+                    <urn:AstChild context="Fail">
+                        <urn:AstAction noOpType="DONE" xsi:type="urn:NoOpActionType" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                    </urn:AstChild>
+                    <urn:AstChild context="Success">
+                        <urn:AstAction apcId="AYC2EL9nt0kY2ILs" xsi:type="urn:ApcMappingActionType" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                            <urn:AttributeMapping>
+                                <urn1:AttributeMap Name="subject" Type="Adapter" AttributeSourceId="adphtmlform2" Value="username" xmlns:urn1="urn:sourceid.org:saml2:metadata-extension:v2"/>
+                                <urn1:TokenAuthorizationIssuanceCriteria xmlns:urn1="urn:sourceid.org:saml2:metadata-extension:v2"/>
+                            </urn:AttributeMapping>
+                        </urn:AstAction>
+                    </urn:AstChild>
+                </urn:AstChild>
+            </urn:AstRoot>
+        </urn:AuthnSelectionTree>
+    </urn:AuthnSelectionTrees>
+    <urn:DefaultAuthnSources/>
+</urn:AuthnSelectionConfig>

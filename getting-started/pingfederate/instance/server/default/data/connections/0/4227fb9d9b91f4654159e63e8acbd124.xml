@@ -7,6 +7,7 @@
                 <urn:EncryptionPolicy EncryptionAlgorithm="http://www.w3.org/2001/04/xmlenc#aes128-cbc" KeyTransportAlgorithm="http://www.w3.org/2001/04/xmlenc#rsa-oaep-mgf1p" EncryptAssertion="false" EncryptSubjectNameID="false" SLOEncryptSubjectNameID="false"/>
                 <urn:DecryptionPolicy AssertionEncrypted="false" SubjectNameIDEncrypted="false" AttributeEncrypted="false" SLOSubjectNameIDEncrypted="false"/>
             </urn:Encryption>
+            <urn:ConnectionTemplateProperties/>
             <urn:MetadataUrlId xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
             <urn:enableAutoMetadataUpdate>false</urn:enableAutoMetadataUpdate>
             <urn:AdditionalAllowedEntitiesConfiguration>
@@ -18,13 +19,26 @@
     </md:Extensions>
     <md:SPSSODescriptor protocolSupportEnumeration="urn:oasis:names:tc:SAML:2.0:protocol" AuthnRequestsSigned="false" WantAssertionsSigned="false" SignResponseAsRequired="true">
         <md:Extensions>
-            <urn:RoleExtension ArtifactTimeoutSeconds="60" LastModified="2020-04-01T12:31:44.629Z">
+            <urn:RoleExtension ArtifactTimeoutSeconds="60" LastModified="2020-04-03T09:27:15.032Z">
                 <urn:IncomingBindings Artifact="false" POST="true" Redirect="true" SOAP="false"/>
                 <urn:EnabledProfiles IDPInitiatedSSO="true" IDPInitiatedSLO="false" SPInitiatedSSO="true" SPInitiatedSLO="false"/>
                 <urn:SP AssertionValidityAfterMinutes="5" AssertionValidityBeforeMinutes="5" ConnectionTargetType="Standard" EnableCDCDuringSSO="false">
                     <urn:C2cContractToAssertionMapping AbortIfNotFoundInAnyDataSources="false" RestrictVirtualServerIds="false" C2cContractId="AYC2EL9nt0kY2ILs" C2cContractName="apc_default">
                         <urn:DefaultAttributeMapping>
-                            <urn:AttributeMap Name="SAML_SUBJECT" Type="Authentication Policy Contract" Value="subject"/>
+                            <urn:AttributeMap Name="test" Type="LDAP" AttributeSourceId="search2" Value="description"/>
+                            <urn:AttributeMap Name="SAML_SUBJECT" Type="LDAP" AttributeSourceId="search1" Value="Subject DN"/>
+                            <urn:AttributeSource Id="search1" Description="search1" Type="LDAP" DataSourceId="LDAP-E89CCAAA5BBEBD1FC562097F390BB9AF2EE56997">
+                                <urn:Parameter Name="filter" Value="uid=${subject}"/>
+                                <urn:Parameter Name="search_base" Value="ou=People,dc=example,dc=com"/>
+                                <urn:Parameter Name="search_scope" Value="SUBTREE_SCOPE"/>
+                                <urn:Parameter Name="memberof_nested_group" Value="false"/>
+                            </urn:AttributeSource>
+                            <urn:AttributeSource Id="search2" Description="search2" Type="LDAP" DataSourceId="LDAP-E89CCAAA5BBEBD1FC562097F390BB9AF2EE56997">
+                                <urn:Parameter Name="filter" Value="uid=${ds.search1.Subject DN}"/>
+                                <urn:Parameter Name="search_base" Value="ou=People,dc=example,dc=com"/>
+                                <urn:Parameter Name="search_scope" Value="SUBTREE_SCOPE"/>
+                                <urn:Parameter Name="memberof_nested_group" Value="false"/>
+                            </urn:AttributeSource>
                             <urn:TokenAuthorizationIssuanceCriteria/>
                         </urn:DefaultAttributeMapping>
                     </urn:C2cContractToAssertionMapping>
@@ -34,6 +48,10 @@
         </md:Extensions>
         <md:NameIDFormat>urn:oasis:names:tc:SAML:1.1:nameid-format:unspecified</md:NameIDFormat>
         <md:AssertionConsumerService index="0" Location="/anything" Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST" isDefault="true"/>
+        <md:AttributeConsumingService index="0">
+            <md:ServiceName xml:lang="en">AttributeContract</md:ServiceName>
+            <md:RequestedAttribute Name="test" NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:unspecified"/>
+        </md:AttributeConsumingService>
     </md:SPSSODescriptor>
     <md:RoleDescriptor protocolSupportEnumeration="urn:oasis:names:tc:SAML:2.0:protocol" xsi:type="urn:PFAvailableCertsRoleDescriptorType" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
     <md:ContactPerson contactType="administrative"/>

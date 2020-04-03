@@ -10,6 +10,18 @@
                 <urn:Field name="Confirm Password">ZTOR3-wN1uyza3dnU2XYc1RrtB_-Kxb4FqWEMaBjrrY.wc4JOsZ6.2</urn:Field>
                 <urn:Field name="Relax Password Requirements">false</urn:Field>
             </urn:Row>
+            <urn:Row defaultRow="false">
+                <urn:Field name="Username">user.0</urn:Field>
+                <urn:Field name="Password">9iIK0c08fWs93gmJ6LtvciOAanGi30NAkYCFcBztwLI.Hld3nIys.2</urn:Field>
+                <urn:Field name="Confirm Password">EyTdKOGgEM-Zk4edyFeY3vH6Y0DFuKxNlPj9T3cmmY8.7Xp--XFS.2</urn:Field>
+                <urn:Field name="Relax Password Requirements">false</urn:Field>
+            </urn:Row>
+            <urn:Row defaultRow="false">
+                <urn:Field name="Username">user.1</urn:Field>
+                <urn:Field name="Password">7T7WfTSUTYVDq_L-5CQNPH_R9P7WdZeInRbrUABUKsI.mSlf0xYc.2</urn:Field>
+                <urn:Field name="Confirm Password">tHOHKAGmciEPyZciyISyo4Me2tW454lpDTqf9jwywQk.G-n4TXZI.2</urn:Field>
+                <urn:Field name="Relax Password Requirements">false</urn:Field>
+            </urn:Row>
         </urn:Table>
     </urn:Tables>
 </urn:PluginConfiguration>

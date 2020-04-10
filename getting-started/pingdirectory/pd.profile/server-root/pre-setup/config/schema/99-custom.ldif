@@ -1,2 +1,3 @@
-( groupCustom-OID NAME 'groupCustom' SUP groupOfNames STRUCTURAL MUST cn MAY ( businessCategory $ description $ member $ o $ ou $ owner $ seeAlso ) X-ORIGIN 'RFC 4519' X-SCHEMA-FILE '99-custom.ldif' )
-( isInCustomGroup-OID NAME 'isInCustomGroup' DESC 'custom attribute' SYNTAX 1.3.6.1.4.1.1466.115.121.1.12 NO-USER-MODIFICATION USAGE directoryOperation X-ORIGIN 'Sun Java System Directory Server' X-SCHEMA-FILE '99-custom.ldif' )
+dn: cn=schema
+objectClasses: ( groupCustom-OID NAME 'groupCustom' SUP groupOfNames STRUCTURAL MUST cn MAY ( businessCategory $ description $ member $ o $ ou $ owner $ seeAlso ) X-ORIGIN 'RFC 4519' X-SCHEMA-FILE '99-custom.ldif' )
+attributeTypes: ( isInCustomGroup-OID NAME 'isInCustomGroup' DESC 'custom attribute' SYNTAX 1.3.6.1.4.1.1466.115.121.1.12 NO-USER-MODIFICATION USAGE directoryOperation X-ORIGIN 'Sun Java System Directory Server' X-SCHEMA-FILE '99-custom.ldif' )

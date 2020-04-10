@@ -2,4 +2,4 @@
 # Add customization
 # 
 #
-dsconfig create-virtual-attribute --name isInCustomGroup  --type is-member-of  --set enabled:true  --set "included-group-filter:(objectClass=groupCustom)" 
+dsconfig create-virtual-attribute --name isInCustomGroup  --type isincustomgroup  --set enabled:true  --set "included-group-filter:(objectClass=groupCustom)" 

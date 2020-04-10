@@ -4,7 +4,6 @@ objectClass: organizationalUnit
 ou: Group
 
 dn: cn=test,ou=Group,${USER_BASE_DN}
-changetype: add
 objectClass: groupOfNames
 objectClass: top
 cn: test

@@ -2,5 +2,6 @@
 <con:config xmlns:con="http://www.sourceid.org/2004/05/config">
     <con:map name="adapter-selectors">
         <con:item name="selcsas">com.pingidentity.pf.selectors.connectionset.ConnectionSetAdapterSelector</con:item>
+        <con:item name="selhttpheader">com.pingidentity.pf.selectors.http.HTTPHeaderAdapterSelector</con:item>
     </con:map>
 </con:config>

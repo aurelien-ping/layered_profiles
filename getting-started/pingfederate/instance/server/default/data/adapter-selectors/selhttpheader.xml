@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urn:PluginConfiguration isInheritExtendedContractAttributes="false" name="sel_httpheader" xmlns:urn="urn:sourceid.org:saml2:adapter:conf">
+    <urn:Fields>
+        <urn:Field name="Header Name">X-MobileIron-App-SplitTunnel</urn:Field>
+        <urn:Field name="Case-Sensitive Matching">true</urn:Field>
+    </urn:Fields>
+    <urn:AdvancedFields/>
+    <urn:Tables>
+        <urn:Table name="Results">
+            <urn:Row defaultRow="false">
+                <urn:Field name="Match Expression">*tunnel*</urn:Field>
+            </urn:Row>
+        </urn:Table>
+    </urn:Tables>
+</urn:PluginConfiguration>

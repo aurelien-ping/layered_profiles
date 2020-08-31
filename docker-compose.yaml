@@ -13,6 +13,10 @@ services:
 
       #- SERVER_PROFILE_LICENSE_URL=https://github.com/aurelien-ping/layered_profiles.git
       #- SERVER_PROFILE_LICENSE_PATH=license/pingdirectory
+    env_file:
+      # Configuration file created when setup.sh (Getting-started project root directory) is first run to source
+      # devops user/key details for evaluation licenses and for docker image/git tags
+      - ${HOME}/.pingidentity/devops
     ports:
       - 1636-1646:636
       - 1443-1453:443
@@ -30,6 +34,10 @@ services:
 
       #- SERVER_PROFILE_LICENSE_URL=https://github.com/aurelien-ping/layered_profiles.git
       #- SERVER_PROFILE_LICENSE_PATH=license/pingfederate
+    env_file:
+      # Configuration file created when setup.sh (Getting-started project root directory) is first run to source
+      # devops user/key details for evaluation licenses and for docker image/git tags
+      - ${HOME}/.pingidentity/devops
     ports:
       - 9031:9031
       - 9999:9999

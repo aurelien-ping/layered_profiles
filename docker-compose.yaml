@@ -8,10 +8,11 @@ services:
       - PING_IDENTITY_ACCEPT_EULA=YES
       - SERVER_PROFILE_URL=https://github.com/aurelien-ping/layered_profiles.git
       - SERVER_PROFILE_PATH=getting-started/pingdirectory
-      - SERVER_PROFILE_PARENT=LICENSE
+      #- SERVER_PROFILE_PARENT=LICENSE
+      - MAX_HEAP_SIZE=768m
 
-      - SERVER_PROFILE_LICENSE_URL=https://github.com/aurelien-ping/layered_profiles.git
-      - SERVER_PROFILE_LICENSE_PATH=license/pingdirectory
+      #- SERVER_PROFILE_LICENSE_URL=https://github.com/aurelien-ping/layered_profiles.git
+      #- SERVER_PROFILE_LICENSE_PATH=license/pingdirectory
     ports:
       - 1636-1646:636
       - 1443-1453:443
@@ -25,10 +26,10 @@ services:
       - PING_IDENTITY_ACCEPT_EULA=YES
       - SERVER_PROFILE_URL=https://github.com/aurelien-ping/layered_profiles.git
       - SERVER_PROFILE_PATH=getting-started/pingfederate
-      - SERVER_PROFILE_PARENT=LICENSE
+      #- SERVER_PROFILE_PARENT=LICENSE
 
-      - SERVER_PROFILE_LICENSE_URL=https://github.com/aurelien-ping/layered_profiles.git
-      - SERVER_PROFILE_LICENSE_PATH=license/pingfederate
+      #- SERVER_PROFILE_LICENSE_URL=https://github.com/aurelien-ping/layered_profiles.git
+      #- SERVER_PROFILE_LICENSE_PATH=license/pingfederate
     ports:
       - 9031:9031
       - 9999:9999
